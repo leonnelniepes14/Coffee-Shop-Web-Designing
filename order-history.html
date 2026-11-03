@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History | Sepia & Umber Co.</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F3E7D7;
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-[#241710]">
+
+    <!-- Navigation -->
+    <nav class="bg-[#241710] text-[#F3E7D7] px-6 py-5">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h2 class="text-xl font-bold">Sepia & Umber Co.</h2>
+
+            <a href="order.html"
+               class="hover:text-[#D6B895] transition">
+                Back to Order
+            </a>
+        </div>
+    </nav>
+
+    <!-- Order History -->
+    <main class="max-w-5xl mx-auto px-6 py-12">
+
+        <div class="mb-8">
+            <h1 class="text-4xl font-bold mb-2">My Order History</h1>
+            <p class="text-[#6F5B4D]">
+                View your previous orders and their status.
+            </p>
+        </div>
+
+        <div id="orders-container" class="space-y-5">
+            <!-- Orders will appear here -->
+        </div>
+
+        <div id="empty-message"
+             class="hidden text-center bg-white rounded-xl p-10 shadow-sm">
+            <h2 class="text-2xl font-bold mb-2">No Orders Yet</h2>
+            <p class="text-gray-500 mb-5">
+                Your orders will appear here once you place an order.
+            </p>
+
+            <a href="order.html"
+               class="inline-block bg-[#8B5E3C] hover:bg-[#6F472E] text-white px-6 py-3 rounded-lg">
+                Order Now
+            </a>
+        </div>
+
+    </main>
+
+    <script>
+        function displayOrders() {
+            const orders = JSON.parse(
+                localStorage.getItem("sepiaOrders")
+            ) || [];
+
+            const container = document.getElementById("orders-container");
+            const emptyMessage = document.getElementById("empty-message");
+
+            container.innerHTML = "";
+
+            if (orders.length === 0) {
+                emptyMessage.classList.remove("hidden");
+                return;
+            }
+
+            emptyMessage.classList.add("hidden");
+
+            orders.slice().reverse().forEach(order => {
+                const items = order.items.map(item => `
+                    <div class="flex justify-between text-sm py-1">
+                        <span>${item.name} × ${item.quantity}</span>
+                        <span>₱${(item.price * item.quantity).toFixed(2)}</span>
+                    </div>
+                `).join("");
+
+                const card = document.createElement("div");
+
+                card.className =
+                    "bg-white rounded-xl shadow-sm p-6 border border-[#D6B895]";
+
+                card.innerHTML = `
+                    <div class="flex flex-wrap justify-between gap-3 mb-4">
+                        <div>
+                            <p class="font-semibold">${order.orderNumber}</p>
+                            <p class="text-sm text-gray-500">${order.date}</p>
+                        </div>
+
+                        <span class="bg-[#F3E7D7] text-[#6F472E] px-4 py-2 rounded-full text-sm font-medium">
+                            ${order.status}
+                        </span>
+                    </div>
+
+                    <div class="border-t border-b py-4 space-y-2">
+                        ${items}
+                    </div>
+
+                    <div class="flex justify-between mt-4 font-semibold">
+                        <span>Total Amount</span>
+                        <span>₱${Number(order.total).toFixed(2)}</span>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        displayOrders();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>My Photo Gallery</title>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+        <!-- Connect Tailwind CSS -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+
+            section,
+            footer {
+                scroll-margin-top: 80px;
+            }
+        </style>
+
+
+    </head>
+<body>
+    <nav class= " font-['Poppins']  bg-[#241710] text-[#F3E7D7] px-10 py-3
+            flex items-center justify-between sticky top-0 z-50
+            border-b border-[#4B3025]">
+
+            <!-- Logo -->
+            <a href="#home" class="flex justify-between gap-3">
+                <img src="coffeeshop_logo_tan.png"
+                    alt="Coffee Shop Logo"
+                    class="w-100% h-20 object-contain">
+
+            
+            </a>
+
+            
+            <!-- Navigation: Center -->
+            <ul class="flex items-center gap-8 font-semibold " >
+                <li><a href="#home" class="text-[#D6B895]">Home</a></li>
+                <li><a href="#menu" class="hover:text-[#D6B895]">Menu</a></li>
+
+                <li><a href="#gallery" class="hover:text-[#D6B895]">Gallery</a></li>
+                <li><a href="#contact" class="hover:text-[#D6B895]">Contact</a></li>
+            </ul>
+
+            <!-- Order Now: Right -->
+            <a href="order.html"
+            class="bg-[#8B5E3C] text-[#F3E7D7] px-5 py-3
+                    rounded-full hover:bg-[#6F472E] transition">
+                Order Now
+            </a>
+    </nav>
+
+        <section id="home"
+            class="relative h-[80vh] min-h-[450px] max-h-[800px]
+                w-full overflow-hidden bg-[#241710]">
+
+            <!-- Background Video -->
+            <video autoplay muted loop playsinline
+                class="absolute inset-0 w-full h-full object-cover">
+
+                <source src="video.mp4" type="video/mp4">
+            </video>
+
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-[#241710]/50"></div>
+
+            <!-- Content -->
+            <div class="relative z-10 flex h-full flex-col
+                        items-center justify-center px-5 text-center
+                        text-[#F3E7D7]">
+
+                <h1 class="font-['Playfair_Display']
+                        text-4xl md:text-6xl font-bold">
+                    Welcome to Sepia & Umber Co.
+                </h1>
+
+                <p class="font-['Poppins'] text-base md:text-lg
+                        mt-5 max-w-xl text-[#E3D2BF]">
+                    Discover your perfect cup of coffee.
+                    Every sip is a moment worth savoring.
+                </p>
+
+                <!-- Order Now Button -->
+                <a href="order.html"
+                class="mt-8 inline-block rounded-full
+                        bg-[#8B5E3C] px-8 py-4
+                        font-['Playfair_Display'] font-semibold
+                        text-[#F3E7D7]
+                        hover:bg-[#6F472E]
+                        hover:scale-105 transition duration-300">
+                    Order Now
+                </a>
+
+            </div>
+        </section>
+
+  <!-- MENU SECTION -->
+<section id="menu" class="min-h-screen scroll-mt-20 overflow-hidden bg-[#D6B895] px-5 py-16 text-[#241710] md:px-10 md:py-20">
+
+    <!-- MENU HEADING -->
+    <div class="mb-10 text-center">
+        <h2 class="font-['Playfair_Display'] text-4xl font-bold md:text-5xl">
+            Our Menu
+        </h2>
+        <p class="mt-4 font-['Poppins'] text-sm text-[#4B3025] md:text-base">
+            Discover your next favorite cup, freshly prepared for you.
+        </p>
+    </div>
+
+    <!-- CAROUSEL -->
+    <div class="relative mx-auto flex h-[300px] max-w-5xl items-center justify-center sm:h-[350px] md:h-[450px]">
+
+        <!-- Coffee Images -->
+        <img src="espresso.jpg" alt="Espresso"
+            class="menu-slide absolute h-[75%] w-[65%] rounded-2xl object-cover shadow-xl transition-all duration-500 sm:w-[55%]">
+
+        <img src="latte.jpg" alt="Cafe Latte"
+            class="menu-slide absolute h-[75%] w-[65%] rounded-2xl object-cover shadow-xl transition-all duration-500 sm:w-[55%]">
+
+        <img src="capuccino.jpg" alt="Cappuccino"
+            class="menu-slide absolute h-[75%] w-[65%] rounded-2xl object-cover shadow-xl transition-all duration-500 sm:w-[55%]">
+
+        <img src="americano.jpg" alt="Americano"
+            class="menu-slide absolute h-[75%] w-[65%] rounded-2xl object-cover shadow-xl transition-all duration-500 sm:w-[55%]">
+
+        <img src="mocha.jpg" alt="Cafe Mocha"
+            class="menu-slide absolute h-[75%] w-[65%] rounded-2xl object-cover shadow-xl transition-all duration-500 sm:w-[55%]">
+
+        <img src="matcha.jpg" alt="Matcha Latte"
+        class="menu-slide absolute h-[75%] w-[65%] rounded-2xl object-cover shadow-xl transition-all duration-500 sm:w-[55%]">
+        <!-- PREVIOUS BUTTON -->
+        <button type="button"
+            onclick="changeMenuSlide(-1)"
+            aria-label="Previous drink"
+            class="absolute left-1 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-[#241710] text-[#F3E7D7] transition hover:bg-[#4B3025] md:left-8 md:h-12 md:w-12">
+            &#10094;
+        </button>
+
+        <!-- NEXT BUTTON -->
+        <button type="button"
+            onclick="changeMenuSlide(1)"
+            aria-label="Next drink"
+            class="absolute right-1 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-[#241710] text-[#F3E7D7] transition hover:bg-[#4B3025] md:right-8 md:h-12 md:w-12">
+            &#10095;
+        </button>
+
+    </div>
+
+    <!-- DRINK NAME AND DESCRIPTION -->
+    <div class="mx-auto mt-6 max-w-2xl px-4 text-center">
+        <h3 id="menu-title"
+            class="font-['Playfair_Display'] text-2xl font-bold md:text-3xl">
+            Espresso
+        </h3>
+
+        <p id="menu-description"
+            class="mt-4 font-['Poppins'] text-sm leading-7 text-[#4B3025] md:text-base">
+            A bold and rich coffee with a concentrated flavor, perfect for those who love a strong cup.
+        </p>
+    </div>
+
+    <!-- CAROUSEL DOTS -->
+    <div class="mt-7 flex justify-center gap-3">
+        <button type="button" onclick="currentMenuSlide(1)" aria-label="Show Espresso"
+            class="menu-dot h-2.5 w-2.5 rounded-full bg-[#4B3025] transition"></button>
+
+        <button type="button" onclick="currentMenuSlide(2)" aria-label="Show Cafe Latte"
+            class="menu-dot h-2.5 w-2.5 rounded-full bg-[#B89A78] transition"></button>
+
+        <button type="button" onclick="currentMenuSlide(3)" aria-label="Show Cappuccino"
+            class="menu-dot h-2.5 w-2.5 rounded-full bg-[#B89A78] transition"></button>
+
+        <button type="button" onclick="currentMenuSlide(4)" aria-label="Show Americano"
+            class="menu-dot h-2.5 w-2.5 rounded-full bg-[#B89A78] transition"></button>
+
+        <button type="button" onclick="currentMenuSlide(5)" aria-label="Show Cafe Mocha"
+            class="menu-dot h-2.5 w-2.5 rounded-full bg-[#B89A78] transition"></button>
+    </div>
+
+</section>
+
+
+<!-- CAROUSEL JAVASCRIPT -->
+<script>
+    let menuIndex = 0;
+
+    const menuItems = document.querySelectorAll(".menu-slide");
+    const menuDots = document.querySelectorAll(".menu-dot");
+
+    const menuTitle = document.getElementById("menu-title");
+    const menuDescription = document.getElementById("menu-description");
+
+    const menuDescriptions = [
+        {
+            title: "Espresso",
+            text: "A bold and rich coffee with a concentrated flavor, perfect for those who love a strong cup."
+        },
+        {
+            title: "Cafe Latte",
+            text: "A smooth espresso blended with steamed milk for a creamy and comforting coffee experience."
+        },
+        {
+            title: "Cappuccino",
+            text: "A balanced combination of espresso, steamed milk, and a layer of soft milk foam."
+        },
+        {
+            title: "Americano",
+            text: "A classic coffee made with espresso and hot water for a smooth, rich taste."
+        },
+        {
+            title: "Cafe Mocha",
+            text: "A delicious blend of espresso, chocolate, and milk for a rich and sweet coffee treat."
+        },
+
+        {
+        title: "Matcha Latte",
+        text: "A smooth and creamy green tea drink with an earthy flavor and a gentle touch of sweetness."
+        }
+    ];
+
+    function updateMenuCarousel() {
+        menuItems.forEach((item, index) => {
+            item.classList.remove("opacity-0", "opacity-100",
+                "scale-75", "scale-100", "pointer-events-none",
+                "pointer-events-auto", "z-10", "z-0",
+                "-translate-x-[65%]", "translate-x-[65%]",
+                "translate-x-0");
+
+            if (index === menuIndex) {
+                item.classList.add(
+                    "opacity-100",
+                    "scale-100",
+                    "translate-x-0",
+                    "pointer-events-auto",
+                    "z-10"
+                );
+            } else if (
+                index === (menuIndex - 1 + menuItems.length) % menuItems.length
+            ) {
+                item.classList.add(
+                    "opacity-50",
+                    "scale-75",
+                    "-translate-x-[65%]",
+                    "pointer-events-none",
+                    "z-0"
+                );
+            } else if (
+                index === (menuIndex + 1) % menuItems.length
+            ) {
+                item.classList.add(
+                    "opacity-50",
+                    "scale-75",
+                    "translate-x-[65%]",
+                    "pointer-events-none",
+                    "z-0"
+                );
+            } else {
+                item.classList.add(
+                    "opacity-0",
+                    "scale-75",
+                    "translate-x-0",
+                    "pointer-events-none",
+                    "z-0"
+                );
+            }
+        });
+
+        menuDots.forEach((dot, index) => {
+            dot.classList.toggle("bg-[#4B3025]", index === menuIndex);
+            dot.classList.toggle("bg-[#B89A78]", index !== menuIndex);
+        });
+
+        menuTitle.textContent = menuDescriptions[menuIndex].title;
+        menuDescription.textContent = menuDescriptions[menuIndex].text;
+    }
+
+    function changeMenuSlide(direction) {
+        menuIndex =
+            (menuIndex + direction + menuItems.length) % menuItems.length;
+
+        updateMenuCarousel();
+    }
+
+    function currentMenuSlide(index) {
+        menuIndex = index - 1;
+        updateMenuCarousel();
+    }
+
+    updateMenuCarousel();
+</script>
+
+    <!-- GALLERY SECTION -->
+<section id="gallery" class="bg-[#4B3025] px-5 py-20 sm:px-8 lg:px-16">
+
+    <!-- Gallery Heading -->
+    <div class="mx-auto mb-12 max-w-3xl text-center">
+
+        <p class="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-[#D6B895]">
+            A Glimpse of Our World
+        </p>
+
+        <h2 class="mb-4 font-['Playfair_Display'] text-4xl font-bold text-[#F3E7D7] sm:text-5xl">
+            Moments at Sepia & Umber
+        </h2>
+
+        <p class="mx-auto max-w-xl text-sm leading-7 text-[#E3D2BF] sm:text-base">
+            A little warmth, a little coffee, and a place to slow down.
+            Take a glimpse into the moments that make our café special.
+        </p>
+
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+        <!-- Image 1 -->
+        <div class="group overflow-hidden rounded-xl bg-[#241710]">
+            <div class="overflow-hidden">
+                <img
+                    src="interior.jpg"
+                    alt="Warm and welcoming coffee shop interior"
+                    class="h-64 w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 sm:h-72"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="p-5">
+                <h3 class="font-['Playfair_Display'] text-xl text-[#F3E7D7]">
+                    Our Space
+                </h3>
+                <p class="mt-2 text-sm leading-6 text-[#D6B895]">
+                    A warm and welcoming place to relax and unwind.
+                </p>
+            </div>
+        </div>
+
+        <!-- Image 2 -->
+        <div class="group overflow-hidden rounded-xl bg-[#241710]">
+            <div class="overflow-hidden">
+                <img
+                    src="behind.jpg"
+                    alt="Freshly prepared coffee"
+                    class="h-64 w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 sm:h-72"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="p-5">
+                <h3 class="font-['Playfair_Display'] text-xl text-[#F3E7D7]">
+                    Behind the Brew
+                </h3>
+                <p class="mt-2 text-sm leading-6 text-[#D6B895]">
+                    Every cup is prepared with care and passion.
+                </p>
+            </div>
+        </div>
+
+        <!-- Image 3 -->
+        <div class="group overflow-hidden rounded-xl bg-[#241710]">
+            <div class="overflow-hidden">
+                <img
+                    src="corners.jpg"
+                    alt="Comfortable café seating area"
+                    class="h-64 w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 sm:h-72"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="p-5">
+                <h3 class="font-['Playfair_Display'] text-xl text-[#F3E7D7]">
+                    Cozy Corners
+                </h3>
+                <p class="mt-2 text-sm leading-6 text-[#D6B895]">
+                    Find your favorite corner for a peaceful coffee break.
+                </p>
+            </div>
+        </div>
+
+        <!-- Image 4 -->
+        <div class="group overflow-hidden rounded-xl bg-[#241710]">
+            <div class="overflow-hidden">
+                <img
+                    src="coffee.jpg"
+                    alt="Latte art in a ceramic coffee cup"
+                    class="h-64 w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 sm:h-72"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="p-5">
+                <h3 class="font-['Playfair_Display'] text-xl text-[#F3E7D7]">
+                    Little Details
+                </h3>
+                <p class="mt-2 text-sm leading-6 text-[#D6B895]">
+                    The small touches that make every visit memorable.
+                </p>
+            </div>
+        </div>
+
+        <!-- Image 5 -->
+        <div class="group overflow-hidden rounded-xl bg-[#241710]">
+            <div class="overflow-hidden">
+                <img
+                    src="coffee-moments.png"
+                    alt="Roasted coffee beans on a wooden surface"
+                    class="h-64 w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 sm:h-72"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="p-5">
+                <h3 class="font-['Playfair_Display'] text-xl text-[#F3E7D7]">
+                    Coffee Moments
+                </h3>
+                <p class="mt-2 text-sm leading-6 text-[#D6B895]">
+                    Rich aromas and comforting flavors in every cup.
+                </p>
+            </div>
+        </div>
+
+        <!-- Image 6 -->
+        <div class="group overflow-hidden rounded-xl bg-[#241710]">
+            <div class="overflow-hidden">
+                <img
+                    src="gatherings.jpg"
+                    alt="Coffee cups arranged on a café table"
+                    class="h-64 w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 sm:h-72"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="p-5">
+                <h3 class="font-['Playfair_Display'] text-xl text-[#F3E7D7]">
+                    Shared Moments
+                </h3>
+                <p class="mt-2 text-sm leading-6 text-[#D6B895]">
+                    A lovely place for conversations and meaningful moments.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+    <footer id="contact"
+    class="bg-[#241710] text-[#F3E7D7] px-6 md:px-12 pt-12 pb-6 scroll-mt-20">
+
+    <!-- Footer Content -->
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2
+                lg:grid-cols-3 gap-10">
+
+        <!-- Coffee Shop Information -->
+        <div>
+            <h2 class="font-['Playfair_Display'] text-2xl
+                       font-bold text-[#D6B895]">
+                       Sepia & Umber Co.
+            </h2>
+
+            <p class="font-['Poppins'] text-sm text-[#C8B29B]
+                      mt-3 leading-relaxed max-w-sm">
+                Every cup tells a story. Enjoy freshly brewed coffee
+                and warm moments with us.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+            <h3 class="font-['Playfair_Display'] text-xl
+                       font-semibold text-[#D6B895]">
+                Quick Links
+            </h3>
+
+            <ul class="font-['Poppins'] text-sm mt-4 space-y-3">
+                <li><a href="#home" class="hover:text-[#D6B895]">Home</a></li>
+                <li><a href="#menu" class="hover:text-[#D6B895]">Our Menu</a></li>
+                <li><a href="#gallery" class="hover:text-[#D6B895]">Gallery</a></li>
+                <li><a href="#contact" class="hover:text-[#D6B895]">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div>
+            <h3 class="font-['Playfair_Display'] text-xl
+                       font-semibold text-[#D6B895]">
+                Contact Us
+            </h3>
+
+            <div class="font-['Poppins'] text-sm text-[#C8B29B]
+                        mt-4 space-y-3">
+                <p>Email: hello@Sepia & Umber Co..com</p>
+                <p>Phone: +63 912 345 6789</p>
+                <p>Visit us for your favorite cup of coffee.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="max-w-7xl mx-auto border-t border-[#4B3025]
+                mt-10 pt-5 text-center">
+
+        <p class="font-['Poppins'] text-xs sm:text-sm text-[#B89A78]">
+            &copy; 2026 Sepia & Umber Co. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+</body>
+</html>

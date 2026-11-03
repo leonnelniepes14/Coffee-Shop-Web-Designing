@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now</title>
+
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1, h2, h3, .brand {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+
+</head>
+<body>
+    
+<body class="min-h-screen bg-[#F3E7D7] text-[#241710]">
+
+  <!-- NAVBAR -->
+<nav class="border-b border-[#D6B895] bg-[#F3E7D7]">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8">
+
+        <a href="homepage.html"
+           class="brand text-xl font-bold tracking-wide text-[#4B3025] sm:text-2xl">
+            Sepia & Umber Co.
+        </a>
+
+        <div class="flex items-center gap-3">
+
+            <!-- Check Order -->
+            <a href="order-history.html"
+               class="rounded-full bg-[#8B5E3C] px-5 py-2 text-sm text-white transition hover:bg-[#6F472E]">
+                Check Order
+            </a>
+
+            <!-- Back to Home -->
+            <a href="homepage.html"
+               class="rounded-full border border-[#8B5E3C] px-5 py-2 text-sm text-[#4B3025] transition hover:bg-[#D6B895]">
+                Back to Home
+            </a>
+
+        </div>
+
+    </div>
+</nav>
+
+    <!-- PAGE HEADING -->
+    <header class="px-5 pb-10 pt-14 text-center sm:pt-16">
+
+        <p class="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-[#8B5E3C]">
+            Made for Your Moments
+        </p>
+
+        <h1 class="text-4xl font-semibold text-[#4B3025] sm:text-5xl">
+            Order Your Coffee
+        </h1>
+
+        <p class="mx-auto mt-4 max-w-xl text-sm leading-7 text-[#6F472E] sm:text-base">
+            Your favorite cup is just a few clicks away.
+            Choose your coffee and make your moment special.
+        </p>
+
+    </header>
+
+    <!-- ORDER CONTENT -->
+    <main class="mx-auto max-w-7xl px-5 pb-20 sm:px-8">
+
+        <div class="grid grid-cols-1 items-start gap-8 lg:grid-cols-3">
+
+            <!-- COFFEE GRID -->
+            <section class="lg:col-span-2">
+
+                <div class="mb-6 flex items-center justify-between">
+                    <h2 class="text-2xl font-semibold text-[#4B3025]">
+                        Our Coffee
+                    </h2>
+
+                    <span class="text-sm text-[#8B5E3C]">
+                        6 selections
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+
+                    <!-- ESPRESSO -->
+                    <article class="overflow-hidden rounded-2xl border border-[#D6B895] bg-white/60 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+                        <img src="espresso.jpg"
+                             alt="Espresso"
+                             class="h-52 w-full object-cover"
+                             loading="lazy">
+
+                        <div class="p-5">
+
+                            <h3 class="text-xl font-semibold text-[#4B3025]">
+                                Espresso
+                            </h3>
+
+                            <p class="mt-2 min-h-12 text-sm leading-6 text-[#6F472E]">
+                                A bold, concentrated coffee with a rich aroma and smooth finish.
+                            </p>
+
+                            <div class="mt-5 flex items-center justify-between gap-3">
+
+                                <span class="font-semibold text-[#8B5E3C]">
+                                    ₱<span data-price="espresso">0.00</span>
+                                </span>
+
+                                <div class="flex items-center gap-3">
+
+                                    <button type="button"
+                                            onclick="changeQuantity('espresso', -1)"
+                                            class="h-9 w-9 rounded-full border border-[#D6B895] text-lg hover:bg-[#D6B895]">
+                                        −
+                                    </button>
+
+                                    <span id="qty-espresso" class="w-4 text-center">0</span>
+
+                                    <button type="button"
+                                            onclick="changeQuantity('espresso', 1)"
+                                            class="h-9 w-9 rounded-full bg-[#8B5E3C] text-lg text-white hover:bg-[#6F472E]">
+                                        +
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CAFE LATTE -->
+                    <article class="overflow-hidden rounded-2xl border border-[#D6B895] bg-white/60 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+                        <img src="latte.jpg"
+                             alt="Cafe Latte"
+                             class="h-52 w-full object-cover"
+                             loading="lazy">
+
+                        <div class="p-5">
+
+                            <h3 class="text-xl font-semibold text-[#4B3025]">
+                                Cafe Latte
+                            </h3>
+
+                            <p class="mt-2 min-h-12 text-sm leading-6 text-[#6F472E]">
+                                Smooth espresso blended with steamed milk and delicate foam.
+                            </p>
+
+                            <div class="mt-5 flex items-center justify-between gap-3">
+
+                                <span class="font-semibold text-[#8B5E3C]">
+                                    ₱<span data-price="latte">0.00</span>
+                                </span>
+
+                                <div class="flex items-center gap-3">
+
+                                    <button type="button"
+                                            onclick="changeQuantity('latte', -1)"
+                                            class="h-9 w-9 rounded-full border border-[#D6B895] text-lg hover:bg-[#D6B895]">
+                                        −
+                                    </button>
+
+                                    <span id="qty-latte" class="w-4 text-center">0</span>
+
+                                    <button type="button"
+                                            onclick="changeQuantity('latte', 1)"
+                                            class="h-9 w-9 rounded-full bg-[#8B5E3C] text-lg text-white hover:bg-[#6F472E]">
+                                        +
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CAPPUCCINO -->
+                    <article class="overflow-hidden rounded-2xl border border-[#D6B895] bg-white/60 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+                        <img src="capuccino.jpg"
+                             alt="Cappuccino"
+                             class="h-52 w-full object-cover"
+                             loading="lazy">
+
+                        <div class="p-5">
+
+                            <h3 class="text-xl font-semibold text-[#4B3025]">
+                                Cappuccino
+                            </h3>
+
+                            <p class="mt-2 min-h-12 text-sm leading-6 text-[#6F472E]">
+                                A balanced espresso drink topped with creamy, airy milk foam.
+                            </p>
+
+                            <div class="mt-5 flex items-center justify-between gap-3">
+
+                                <span class="font-semibold text-[#8B5E3C]">
+                                    ₱<span data-price="cappuccino">0.00</span>
+                                </span>
+
+                                <div class="flex items-center gap-3">
+
+                                    <button type="button"
+                                            onclick="changeQuantity('cappuccino', -1)"
+                                            class="h-9 w-9 rounded-full border border-[#D6B895] text-lg hover:bg-[#D6B895]">
+                                        −
+                                    </button>
+
+                                    <span id="qty-cappuccino" class="w-4 text-center">0</span>
+
+                                    <button type="button"
+                                            onclick="changeQuantity('cappuccino', 1)"
+                                            class="h-9 w-9 rounded-full bg-[#8B5E3C] text-lg text-white hover:bg-[#6F472E]">
+                                        +
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- AMERICANO -->
+                    <article class="overflow-hidden rounded-2xl border border-[#D6B895] bg-white/60 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+                        <img src="americano.jpg"
+                             alt="Americano"
+                             class="h-52 w-full object-cover"
+                             loading="lazy">
+
+                        <div class="p-5">
+
+                            <h3 class="text-xl font-semibold text-[#4B3025]">
+                                Americano
+                            </h3>
+
+                            <p class="mt-2 min-h-12 text-sm leading-6 text-[#6F472E]">
+                                Espresso combined with hot water for a clean, rich flavor.
+                            </p>
+
+                            <div class="mt-5 flex items-center justify-between gap-3">
+
+                                <span class="font-semibold text-[#8B5E3C]">
+                                    ₱<span data-price="americano">0.00</span>
+                                </span>
+
+                                <div class="flex items-center gap-3">
+
+                                    <button type="button"
+                                            onclick="changeQuantity('americano', -1)"
+                                            class="h-9 w-9 rounded-full border border-[#D6B895] text-lg hover:bg-[#D6B895]">
+                                        −
+                                    </button>
+
+                                    <span id="qty-americano" class="w-4 text-center">0</span>
+
+                                    <button type="button"
+                                            onclick="changeQuantity('americano', 1)"
+                                            class="h-9 w-9 rounded-full bg-[#8B5E3C] text-lg text-white hover:bg-[#6F472E]">
+                                        +
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CAFE MOCHA -->
+                    <article class="overflow-hidden rounded-2xl border border-[#D6B895] bg-white/60 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+                        <img src="mocha.jpg"
+                             alt="Cafe Mocha"
+                             class="h-52 w-full object-cover"
+                             loading="lazy">
+
+                        <div class="p-5">
+
+                            <h3 class="text-xl font-semibold text-[#4B3025]">
+                                Cafe Mocha
+                            </h3>
+
+                            <p class="mt-2 min-h-12 text-sm leading-6 text-[#6F472E]">
+                                Espresso and chocolate combined with milk for a rich, comforting cup.
+                            </p>
+
+                            <div class="mt-5 flex items-center justify-between gap-3">
+
+                                <span class="font-semibold text-[#8B5E3C]">
+                                    ₱<span data-price="mocha">0.00</span>
+                                </span>
+
+                                <div class="flex items-center gap-3">
+
+                                    <button type="button"
+                                            onclick="changeQuantity('mocha', -1)"
+                                            class="h-9 w-9 rounded-full border border-[#D6B895] text-lg hover:bg-[#D6B895]">
+                                        −
+                                    </button>
+
+                                    <span id="qty-mocha" class="w-4 text-center">0</span>
+
+                                    <button type="button"
+                                            onclick="changeQuantity('mocha', 1)"
+                                            class="h-9 w-9 rounded-full bg-[#8B5E3C] text-lg text-white hover:bg-[#6F472E]">
+                                        +
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- MATCHA LATTE -->
+                    <article class="overflow-hidden rounded-2xl border border-[#D6B895] bg-white/60 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+                        <img src="matcha.jpg"
+                             alt="Matcha Latte"
+                             class="h-52 w-full object-cover"
+                             loading="lazy">
+
+                        <div class="p-5">
+
+                            <h3 class="text-xl font-semibold text-[#4B3025]">
+                                Matcha Latte
+                            </h3>
+
+                            <p class="mt-2 min-h-12 text-sm leading-6 text-[#6F472E]">
+                                A smooth and creamy green tea drink with an earthy flavor and gentle sweetness.
+                            </p>
+
+                            <div class="mt-5 flex items-center justify-between gap-3">
+
+                                <span class="font-semibold text-[#8B5E3C]">
+                                    ₱<span data-price="matcha">0.00</span>
+                                </span>
+
+                                <div class="flex items-center gap-3">
+
+                                    <button type="button"
+                                            onclick="changeQuantity('matcha', -1)"
+                                            class="h-9 w-9 rounded-full border border-[#D6B895] text-lg hover:bg-[#D6B895]">
+                                        −
+                                    </button>
+
+                                    <span id="qty-matcha" class="w-4 text-center">0</span>
+
+                                    <button type="button"
+                                            onclick="changeQuantity('matcha', 1)"
+                                            class="h-9 w-9 rounded-full bg-[#8B5E3C] text-lg text-white hover:bg-[#6F472E]">
+                                        +
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- ORDER SUMMARY AND CHECKOUT -->
+            <aside class="h-fit rounded-2xl border border-[#D6B895] bg-[#E3D2BF] p-6 lg:sticky lg:top-6">
+
+                <form id="checkout-form" class="space-y-4">
+
+                    <!-- CHECKOUT DETAILS -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#4B3025]">
+                            Checkout Details
+                        </h3>
+
+                        <p class="mt-1 text-sm text-[#6F472E]">
+                            Enter your details to confirm your order.
+                        </p>
+                    </div>
+
+                    <!-- CUSTOMER NAME -->
+                    <div>
+                        <label for="customer-name"
+                               class="mb-2 block text-sm font-medium text-[#4B3025]">
+                            Full Name
+                        </label>
+
+                        <input type="text"
+                               id="customer-name"
+                               name="customerName"
+                               autocomplete="name"
+                               required
+                               placeholder="Enter your full name"
+                               class="w-full rounded-xl border border-[#B89A78] bg-[#F3E7D7] px-4 py-3 text-sm outline-none focus:border-[#8B5E3C]">
+                    </div>
+
+                    <!-- CONTACT NUMBER -->
+                    <div id="contact-number-container">
+                        <label for="contact-number"
+                               class="mb-2 block text-sm font-medium text-[#4B3025]">
+                            Contact Number
+                        </label>
+
+                        <input type="tel"
+                               id="contact-number"
+                               name="contactNumber"
+                               autocomplete="tel"
+                               pattern="[0-9+\-() ]{7,20}"
+                               placeholder="09XXXXXXXXX"
+                               class="w-full rounded-xl border border-[#B89A78] bg-[#F3E7D7] px-4 py-3 text-sm outline-none focus:border-[#8B5E3C]">
+                    </div>
+
+                    <!-- ORDER TYPE -->
+                    <div>
+                        <label for="order-type"
+                               class="mb-2 block text-sm font-medium text-[#4B3025]">
+                            Order Type
+                        </label>
+
+                        <select id="order-type"
+                                name="orderType"
+                                required
+                                class="w-full rounded-xl border border-[#B89A78] bg-[#F3E7D7] px-4 py-3 text-sm outline-none focus:border-[#8B5E3C]">
+
+                            <option value="Pick-up">Pick-up</option>
+                            <option value="Deliver">Delivery</option>
+
+                        </select>
+                    </div>
+
+                    <!-- DELIVERY ADDRESS -->
+                    <div id="delivery-address-container" class="hidden">
+                        <label for="delivery-address"
+                               class="mb-2 block text-sm font-medium text-[#4B3025]">
+                            Delivery Address
+                        </label>
+
+                        <textarea id="delivery-address"
+                                  name="deliveryAddress"
+                                  rows="2"
+                                  placeholder="Enter your complete delivery address"
+                                  class="w-full rounded-xl border border-[#B89A78] bg-[#F3E7D7] px-4 py-3 text-sm outline-none focus:border-[#8B5E3C]"></textarea>
+                    </div>
+
+                    <!-- PAYMENT METHOD -->
+                    <div>
+                        <label for="payment-method"
+                               class="mb-2 block text-sm font-medium text-[#4B3025]">
+                            Payment Method
+                        </label>
+
+                        <select id="payment-method"
+                                name="paymentMethod"
+                                required
+                                class="w-full rounded-xl border border-[#B89A78] bg-[#F3E7D7] px-4 py-3 text-sm outline-none focus:border-[#8B5E3C]">
+
+                            <option value="Cash">Cash</option>
+                            <option value="GCash">GCash</option>
+                            <option value="Card">Card</option>
+
+                        </select>
+                    </div>
+
+                    <!-- SPECIAL REQUESTS -->
+                    <div>
+                        <label for="order-notes"
+                               class="mb-2 block text-sm font-medium text-[#4B3025]">
+                            Special Requests? (Optional)
+                        </label>
+
+                        <textarea id="order-notes"
+                                  name="orderNotes"
+                                  rows="2"
+                                  maxlength="500"
+                                  placeholder="Any special requests?"
+                                  class="w-full rounded-xl border border-[#B89A78] bg-[#F3E7D7] px-4 py-3 text-sm outline-none focus:border-[#8B5E3C]"></textarea>
+                    </div>
+
+                    <!-- ORDER SUMMARY -->
+                    <div class="border-t border-[#B89A78] pt-5">
+
+                        <h2 class="text-2xl font-semibold text-[#4B3025]">
+                            Your Order
+                        </h2>
+
+                        <p class="mt-2 text-sm text-[#6F472E]">
+                            Review your selections before checking out.
+                        </p>
+
+                        <div id="order-items" class="my-6 space-y-4">
+                            <p class="text-sm text-[#8B5E3C]">
+                                No items selected yet.
+                            </p>
+                        </div>
+
+                        <div class="border-t border-[#B89A78] pt-4">
+
+                            <div class="flex items-center justify-between">
+
+                                <span class="font-medium text-[#4B3025]">
+                                    Total
+                                </span>
+
+                                <span id="order-total"
+                                      class="text-xl font-semibold text-[#4B3025]">
+                                    ₱0.00
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CONFIRM ORDER BUTTON -->
+                    <button type="submit"
+                            id="confirm-order"
+                            class="w-full rounded-full bg-[#8B5E3C] px-5 py-3 font-medium text-[#F3E7D7] transition hover:bg-[#6F472E]">
+
+                        Confirm Order
+
+                    </button>
+
+                    <p id="checkout-message"
+                       role="status"
+                       aria-live="polite"
+                       class="text-sm leading-6 text-[#4B3025]">
+                    </p>
+
+                </form>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- RECEIPT MODAL -->
+    <div id="receipt-modal"
+         class="fixed inset-0 z-50 hidden items-center justify-center overflow-y-auto bg-black/60 px-4 py-6">
+
+        <div class="my-auto w-full max-w-md rounded-2xl bg-[#F3E7D7] p-6 shadow-2xl">
+
+            <!-- RECEIPT HEADER -->
+            <div class="text-center">
+
+                <h2 class="text-2xl font-bold text-[#4B3025]">
+                    Sepia & Umber Co.
+                </h2>
+
+                <p class="mt-1 text-sm text-[#8B5E3C]">
+                    Order Receipt
+                </p>
+
+                <div class="my-4 border-t border-dashed border-[#B89A78]"></div>
+
+            </div>
+
+            <!-- RECEIPT CUSTOMER DETAILS -->
+            <div class="space-y-2 text-sm text-[#4B3025]">
+
+                <p>
+                    Order Number:
+                    <span id="receipt-number" class="font-semibold"></span>
+                </p>
+
+                <p>
+                    Customer:
+                    <span id="receipt-customer"></span>
+                </p>
+
+                <p>
+                    Contact:
+                    <span id="receipt-contact"></span>
+                </p>
+
+                <p>
+                    Order Type:
+                    <span id="receipt-type"></span>
+                </p>
+
+                <p>
+                    Payment:
+                    <span id="receipt-payment"></span>
+                </p>
+
+                <p>
+                    Delivery Address:
+                    <span id="receipt-address"></span>
+                </p>
+
+                <p>
+                    Special Requests:
+                    <span id="receipt-notes"></span>
+                </p>
+
+            </div>
+
+            <div class="my-4 border-t border-dashed border-[#B89A78]"></div>
+
+            <!-- RECEIPT ITEMS -->
+            <h3 class="mb-3 font-semibold text-[#4B3025]">
+                Ordered Items
+            </h3>
+
+            <div id="receipt-items" class="space-y-3"></div>
+
+            <div class="my-4 border-t border-[#B89A78]"></div>
+
+            <!-- RECEIPT TOTAL -->
+            <div class="flex items-center justify-between">
+
+                <span class="font-semibold text-[#4B3025]">
+                    Total Amount
+                </span>
+
+                <span id="receipt-total"
+                      class="text-xl font-bold text-[#8B5E3C]">
+                    ₱0.00
+                </span>
+
+            </div>
+
+            <p class="mt-5 text-center text-xs text-[#8B5E3C]">
+                Thank you for choosing Sepia & Umber Co.!
+            </p>
+
+            <!-- DONE BUTTON -->
+            <button type="button"
+                    onclick="closeReceipt()"
+                    class="mt-6 w-full rounded-full bg-[#8B5E3C] px-5 py-3 font-medium text-[#F3E7D7] transition hover:bg-[#6F472E]">
+
+                Done
+
+            </button>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#241710] px-5 py-6 text-center text-sm text-[#D6B895]">
+        © 2026 Sepia & Umber Co. All rights reserved.
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // =========================================
+        // COFFEE MENU AND PRICES
+        // =========================================
+
+        const coffeeMenu = {
+            espresso: {
+                name: "Espresso",
+                price: 150
+            },
+
+            latte: {
+                name: "Cafe Latte",
+                price: 170
+            },
+
+            cappuccino: {
+                name: "Cappuccino",
+                price: 180
+            },
+
+            americano: {
+                name: "Americano",
+                price: 130
+            },
+
+            mocha: {
+                name: "Cafe Mocha",
+                price: 190
+            },
+
+            matcha: {
+                name: "Matcha Latte",
+                price: 210
+            }
+        };
+
+
+        // =========================================
+        // QUANTITIES
+        // =========================================
+
+        const quantities = {
+            espresso: 0,
+            latte: 0,
+            cappuccino: 0,
+            americano: 0,
+            mocha: 0,
+            matcha: 0
+        };
+
+
+        // =========================================
+        // DOM ELEMENTS
+        // =========================================
+
+        const checkoutForm = document.getElementById("checkout-form");
+
+        const orderTypeSelect = document.getElementById("order-type");
+
+        const contactInput = document.getElementById("contact-number");
+
+        const contactContainer = document.getElementById("contact-number-container");
+
+        const deliveryAddress = document.getElementById("delivery-address");
+
+        const deliveryAddressContainer = document.getElementById("delivery-address-container");
+
+
+        // =========================================
+        // DISPLAY COFFEE PRICES
+        // =========================================
+
+        for (const id in coffeeMenu) {
+
+            const priceElement = document.querySelector(
+                '[data-price="' + id + '"]'
+            );
+
+            priceElement.textContent = coffeeMenu[id].price.toFixed(2);
+
+        }
+
+
+        // =========================================
+        // CHANGE COFFEE QUANTITY
+        // =========================================
+
+        function changeQuantity(id, amount) {
+
+            quantities[id] = Math.max(
+                0,
+                quantities[id] + amount
+            );
+
+            document.getElementById("qty-" + id).textContent =
+                quantities[id];
+
+            updateOrderSummary();
+
+        }
+
+
+        // =========================================
+        // UPDATE ORDER SUMMARY
+        // =========================================
+
+        function updateOrderSummary() {
+
+            const orderItems = document.getElementById("order-items");
+
+            const totalElement = document.getElementById("order-total");
+
+            orderItems.innerHTML = "";
+
+            let total = 0;
+
+            let itemCount = 0;
+
+
+            for (const id in coffeeMenu) {
+
+                const coffee = coffeeMenu[id];
+
+                const quantity = quantities[id];
+
+
+                if (quantity > 0) {
+
+                    const subtotal = coffee.price * quantity;
+
+                    total += subtotal;
+
+                    itemCount += quantity;
+
+
+                    const row = document.createElement("div");
+
+                    row.className =
+                        "flex items-start justify-between gap-3 text-sm";
+
+
+                    const name = document.createElement("span");
+
+                    name.className = "text-[#4B3025]";
+
+                    name.textContent =
+                        coffee.name + " × " + quantity;
+
+
+                    const price = document.createElement("span");
+
+                    price.className =
+                        "shrink-0 font-medium text-[#4B3025]";
+
+                    price.textContent =
+                        "₱" + subtotal.toFixed(2);
+
+
+                    row.append(name, price);
+
+                    orderItems.appendChild(row);
+
+                }
+
+            }
+
+
+            if (itemCount === 0) {
+
+                const empty = document.createElement("p");
+
+                empty.className = "text-sm text-[#8B5E3C]";
+
+                empty.textContent = "No items selected yet.";
+
+                orderItems.appendChild(empty);
+
+            }
+
+
+            totalElement.textContent = "₱" + total.toFixed(2);
+
+            document.getElementById("checkout-message").textContent = "";
+
+        }
+
+
+        // =========================================
+        // TOGGLE PICK-UP AND DELIVERY FIELDS
+        // =========================================
+
+        function toggleOrderFields() {
+
+            const isDelivery = orderTypeSelect.value === "Deliver";
+
+
+            // Contact number
+            contactInput.required = isDelivery;
+
+            contactInput.disabled = !isDelivery;
+
+            if (!isDelivery) {
+                contactInput.value = "";
+            }
+
+
+            // Delivery address
+            deliveryAddressContainer.classList.toggle("hidden", !isDelivery);
+
+            deliveryAddress.required = isDelivery;
+
+            if (!isDelivery) {
+                deliveryAddress.value = "";
+            }
+
+
+            // Visual appearance
+            contactContainer.classList.toggle("opacity-50", !isDelivery);
+
+        }
+
+
+        orderTypeSelect.addEventListener("change", toggleOrderFields);
+
+        toggleOrderFields();
+
+
+        // =========================================
+        // CONFIRM ORDER AND GENERATE RECEIPT
+        // =========================================
+
+        checkoutForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+
+            const message = document.getElementById("checkout-message");
+
+
+            // Check selected items
+            const itemCount = Object.values(quantities).reduce(
+                (sum, quantity) => sum + quantity,
+                0
+            );
+
+
+            if (itemCount === 0) {
+
+                message.textContent =
+                    "Please select at least one coffee before confirming your order.";
+
+                return;
+
+            }
+
+
+            // Get customer information
+            const customerName = document.getElementById("customer-name").value.trim();
+
+            const contactNumber = contactInput.value.trim();
+
+            const orderType = orderTypeSelect.value;
+
+            const paymentMethod = document.getElementById("payment-method").value;
+
+            const address = deliveryAddress.value.trim();
+
+            const notes = document.getElementById("order-notes").value.trim();
+
+
+            // Validate customer name
+            if (!customerName) {
+
+                message.textContent = "Please enter your full name.";
+
+                return;
+
+            }
+
+
+            // Validate delivery information
+            if (orderType === "Deliver") {
+
+                if (!contactNumber) {
+
+                    message.textContent =
+                        "Please enter your contact number for delivery.";
+
+                    return;
+
+                }
+
+                if (!address) {
+
+                    message.textContent =
+                        "Please enter your complete delivery address.";
+
+                    return;
+
+                }
+
+            }
+
+
+            // Validate prices
+            const hasUnsetPrices = Object.values(coffeeMenu).some(
+                coffee => coffee.price <= 0
+            );
+
+
+            if (hasUnsetPrices) {
+
+                message.textContent =
+                    "Please set the prices for all coffee selections first.";
+
+                return;
+
+            }
+
+
+            // Calculate total
+            const total = Object.keys(coffeeMenu).reduce(
+                (sum, id) => sum + coffeeMenu[id].price * quantities[id],
+                0
+            );
+
+
+            // Generate order number
+            const orderNumber = "SU-" + Date.now().toString().slice(-6);
+
+
+            // =====================================
+            // DISPLAY RECEIPT DETAILS
+            // =====================================
+
+            document.getElementById("receipt-number").textContent =
+                orderNumber;
+
+            document.getElementById("receipt-customer").textContent =
+                customerName;
+
+            document.getElementById("receipt-contact").textContent =
+                orderType === "Pick-up" ? "Not required" : contactNumber;
+
+            document.getElementById("receipt-type").textContent =
+                orderType;
+
+            document.getElementById("receipt-payment").textContent =
+                paymentMethod;
+
+            document.getElementById("receipt-address").textContent =
+                orderType === "Deliver" ? address : "Not applicable";
+
+            document.getElementById("receipt-notes").textContent =
+                notes || "None";
+
+
+            // =====================================
+            // DISPLAY ORDERED ITEMS
+            // =====================================
+
+            const receiptItems = document.getElementById("receipt-items");
+
+            receiptItems.innerHTML = "";
+
+
+            Object.keys(coffeeMenu).forEach(id => {
+
+                const quantity = quantities[id];
+
+
+                if (quantity > 0) {
+
+                    const coffee = coffeeMenu[id];
+
+                    const subtotal = coffee.price * quantity;
+
+
+                    const item = document.createElement("div");
+
+                    item.className =
+                        "flex justify-between gap-3 text-sm text-[#241710]";
+
+
+                    const name = document.createElement("span");
+
+                    name.textContent =
+                        coffee.name + " × " + quantity;
+
+
+                    const price = document.createElement("span");
+
+                    price.textContent =
+                        "₱" + subtotal.toFixed(2);
+
+
+                    item.append(name, price);
+
+                    receiptItems.appendChild(item);
+
+                }
+
+            });
+
+
+            // Display total
+            document.getElementById("receipt-total").textContent =
+                "₱" + total.toFixed(2);
+
+
+            // =====================================
+            // SHOW RECEIPT MODAL
+            // =====================================
+
+            const modal = document.getElementById("receipt-modal");
+
+            modal.classList.remove("hidden");
+
+            modal.classList.add("flex");
+
+
+            message.textContent = "";
+
+        });
+
+
+        // =========================================
+        // CLOSE RECEIPT AND RESET FORM
+        // =========================================
+
+        function closeReceipt() {
+
+            // Hide receipt
+            const modal = document.getElementById("receipt-modal");
+
+            modal.classList.add("hidden");
+
+            modal.classList.remove("flex");
+
+
+            // Reset quantities
+            Object.keys(quantities).forEach(id => {
+
+                quantities[id] = 0;
+
+                document.getElementById("qty-" + id).textContent = "0";
+
+            });
+
+
+            // Reset checkout form
+            checkoutForm.reset();
+
+
+            // Reset order fields
+            toggleOrderFields();
+
+
+            // Reset order summary
+            updateOrderSummary();
+
+
+            // Clear receipt information
+            document.getElementById("receipt-number").textContent = "";
+
+            document.getElementById("receipt-customer").textContent = "";
+
+            document.getElementById("receipt-contact").textContent = "";
+
+            document.getElementById("receipt-type").textContent = "";
+
+            document.getElementById("receipt-payment").textContent = "";
+
+            document.getElementById("receipt-address").textContent = "";
+
+            document.getElementById("receipt-notes").textContent = "";
+
+            document.getElementById("receipt-items").innerHTML = "";
+
+            document.getElementById("receipt-total").textContent = "₱0.00";
+
+            const order = {
+            orderNumber: orderNumber,
+            date: new Date().toLocaleDateString(),
+            items: Object.values(quantities)
+                .filter(item => item.quantity > 0)
+                .map(item => ({
+                    name: item.name,
+                    price: item.price,
+                    quantity: item.quantity
+                })),
+            total: total,
+            status: "Pending"
+        };
+
+        let orders = JSON.parse(localStorage.getItem("sepiaOrders")) || [];
+
+        orders.push(order);
+
+        localStorage.setItem("sepiaOrders", JSON.stringify(orders));
+
+        }
+
+    </script>
+
+</body>
+</html>
